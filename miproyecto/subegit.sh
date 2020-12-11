@@ -3,46 +3,61 @@ mvn test-compile
 mvn test
 mvn package
 cd ..
-#!/bin/bash
 
-# UpToGit 0.1
-# Actualiza facilmente tu repositorio Git
-# (CC) 2011 Alfonso Saavedra "Son Link"
-# http://sonlinkblog.blogspot.com
-# Bajo licencia GNU/GPL
+#!/bin/sh
+#
+# Git.sh
+#
+# Uso: ./git.sh
+#
+# Original: http://sekika.github.io/2016/06/06/github-many-files/
+#
+# Sin acentos*
 
-# Modo de uso: copia o mueve este script a /usr/bin o /usr/local/bin y desde el directorio donde se encuentre la copia de un repo git, ejecútalo de esta manera:
-# uptogit <ficheros>
+# Registros
+AddLog="/dev/null"
+CommitLog="/dev/null"
+PushLog="/dev/null"
 
-# Comprobamos si el directorio en el que estamos es de un repositorio git
-if [ ! -d '.git' ]; then
-	echo 'Esta carpeta no contiene un repositorio Git'
-	exit -1
+# Mensaje
+message=$@
+if [ -z "$message" ]; then
+  message="Subiendo archivos de forma automatica"
 fi
 
-# Ahora comprobamos si se le paso algun parametro
-if [ $# == 0 ]; then
-	echo "UpToGit: ¡Error! No se le ha pasado ningún parámetro"
-	echo "uptogit fichero1 fichero2 ... ficheroN"
-	exit -1
-else
-	# Recorremos los parametros para comprobar si son ficheros o directorios
-	for file in $*; do
-		if [ ! -e $file ]; then
-			echo "UpToGit: El archivo o directorio $file no existe"
-			exit -1
-		fi
-	done
-	
-	# Si llegamos hasta aquí, indicamos a Git los archivos a subir
-	git add $*
-	
-	# Esto nos pedira el mensaje del commit
-	echo "Introduce el mensaje del commit:"
-	read TXT
-	git commit -m "$TXT"
+# Haciendo los git add/commit/push por steps
+while read a b c
+do
+  total=`find . -type f -size +$a -size -$b | grep -v "^\./\.git/" | wc -l | sed -e 's/ //g'`
+  if [ $total -gt "0" ]; then
+    echo "Archivos totales $total < $b                              "
+  fi
+  find . -type f -size +$a -size -$b | grep -v "^\./\.git/" | cat -n | while read num file
+  do
+    echo "Agregando: "`expr $num \* 100 / $total`"% ($num/$total)\r\c"
+    git add "$file" 1>>$AddLog 2>>$AddLog
+    if [ `echo $num | grep "$c"` ]; then
+      echo "Agregando al commit $num                    \r\c"
+      git commit -m "$message" 1>>$CommitLog 2>>$CommitLog; git push 1>>$PushLog 2>>$PushLog
+    fi
+  done
+  if [ $total -gt "0" ]; then
+    echo "Ultimo commit de esta etapa                \r\c"
+    git commit -m "$message" 1>>$CommitLog 2>>$CommitLog; git push 1>>$PushLog 2>>$PushLog
+  fi
+done << _LIST_
+0 8k 0000$
+8k 80k 000$
+80k 800k 00$
+800k 8M 0$
+8M 100M $
+_LIST_
 
-	# Y terminamos subiendo los archivos
-	git push origin master
+#
+# Todos los archivos subidos, en esta etapa se intentan subir con LSF
+#
+echo "Concluyendo con los archivos mas grandes                       "
+git add . 1>>$AddLog 2>>$AddLog
+git commit -m "$message" 1>>$CommitLog 2>>$CommitLog; git push 1>>$PushLog 2>>$PushLog
 
-fi
+echo "Finalizado"
