@@ -4,5 +4,5 @@ mvn test
 mvn package
 cd ..
 git add *
-git commit -m "otro commit"
+git commit -m "actualizado pom.xml"
 git push -u origin main
