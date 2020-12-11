@@ -22,7 +22,7 @@ PushLog="/dev/null"
 # Mensaje
 message=$@
 if [ -z "$message" ]; then
-  message="Subiendo archivos de forma automatica2"
+  message="Subiendo archivos de forma automatica"
 fi
 
 # Haciendo los git add/commit/push por steps
