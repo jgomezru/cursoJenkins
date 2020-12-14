@@ -10,4 +10,10 @@ public class App
     {
         System.out.println( "Hola Mundo!" );
     }
+    
+    public static int doblar (int numero)
+    {
+        return numero *2;
+        
+    }
 }
