@@ -40,13 +40,7 @@ public class AppTest
         assertEquals(resultado,0);
     }       
     
-   @Test
-    public void pruebaDoblarCero()
-    {
-        int resultado=App.doblar(0);
-        assertEquals(resultado,0);
-    }       
-    
+  
     
   @Test
     public void pruebaMayor1()
