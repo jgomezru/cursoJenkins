@@ -77,7 +77,7 @@ public class AppTest
     public void pruebaSumarMal()
     {
         int resultado=App.sumar(1,2);
-        assertEquals(resultado,2);
+        assertEquals(resultado,3);
     }              
         
 
