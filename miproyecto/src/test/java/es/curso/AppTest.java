@@ -1,9 +1,12 @@
 package es.curso;
 
+import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
+import org.junit.runner.RunWith;
+import org.junit.Assert;
 
-import org.junit.Test;
+
 
 /**
  * Unit test for simple App.
@@ -74,7 +77,6 @@ public class AppTest
     public void pruebaSumar()
     {
         int resultado=App.sumar(1,2);
-        System.out.println('Dentro de pruebaSumar' +resultado );
         assertEquals(resultado,2);
     }              
         
