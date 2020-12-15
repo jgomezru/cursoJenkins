@@ -1,6 +1,6 @@
+mvn clean
 mvn compile
 mvn process-classes
-
 mvn test-compile
 mvn process-test-sources
 generate-test-resources
