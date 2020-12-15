@@ -24,6 +24,14 @@
     </dependency>
   </dependencies>
   
-
+<profiles>
+        <profile>
+            <id>build-release</id>
+            <properties>
+                <maven.compiler.debug>true</maven.compiler.debug>
+                <maven.compiler.optimize>false</maven.compiler.optimize>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>

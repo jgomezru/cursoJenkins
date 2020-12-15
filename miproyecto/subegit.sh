@@ -9,6 +9,7 @@ mvn test
 prepare-package
 mvn package
 mvn verify
+mvn install
 cd ..
 
 #!/bin/sh
