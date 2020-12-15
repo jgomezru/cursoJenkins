@@ -73,7 +73,7 @@ public class AppTest
         int resultado=App.sumar(0,-5);
         assertEquals(resultado,-5);
     }      
-        
+@Test        
     public void pruebaSumar()
     {
         int resultado=App.sumar(1,2);
