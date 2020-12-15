@@ -43,9 +43,8 @@ public class AppTest
         int resultado=App.doblar(0);
         assertEquals(resultado,0);
     }       
-    
+   
   
-    
   @Test
     public void pruebaMayor1()
     {
