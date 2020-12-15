@@ -68,6 +68,9 @@ echo "Concluyendo con los archivos mas grandes                       "
 git add . 1>>$AddLog 2>>$AddLog
 git commit -m "$message" 1>>$CommitLog 2>>$CommitLog; git push 1>>$PushLog 2>>$PushLog
 
+
+cd ..
+
 mvn sonar:sonar \
   -Dsonar.projectKey=miproyecto \
   -Dsonar.host.url=http://172.31.14.106:8081 \
