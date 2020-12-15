@@ -11,6 +11,7 @@ mvn package
 mvn verify
 mvn install
 
+cd ..
 #!/bin/sh
 #
 # Git.sh
@@ -68,7 +69,7 @@ git add . 1>>$AddLog 2>>$AddLog
 git commit -m "$message" 1>>$CommitLog 2>>$CommitLog; git push 1>>$PushLog 2>>$PushLog
 
 
-cd ..
+cd miproyecto
 
 
 
