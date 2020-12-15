@@ -60,13 +60,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="es.curso.AppTest" name="pruebaMayorNegativo" time="0.008"/>
-  <testcase classname="es.curso.AppTest" name="pruebaSumarMal" time="0"/>
+  <testcase classname="es.curso.AppTest" name="pruebaMayorNegativo" time="0.007"/>
+  <testcase classname="es.curso.AppTest" name="pruebaSumarMal" time="0.001"/>
   <testcase classname="es.curso.AppTest" name="shouldAnswerWithTrue" time="0"/>
   <testcase classname="es.curso.AppTest" name="pruebaDoblarNegativo" time="0"/>
-  <testcase classname="es.curso.AppTest" name="pruebaDoblar" time="0.003"/>
+  <testcase classname="es.curso.AppTest" name="pruebaDoblar" time="0.001"/>
   <testcase classname="es.curso.AppTest" name="pruebaMayor1" time="0"/>
-  <testcase classname="es.curso.AppTest" name="pruebaMayor2" time="0"/>
+  <testcase classname="es.curso.AppTest" name="pruebaMayor2" time="0.001"/>
   <testcase classname="es.curso.AppTest" name="pruebaDoblarCero" time="0"/>
-  <testcase classname="es.curso.AppTest" name="pruebaSumarNegativo" time="0"/>
+  <testcase classname="es.curso.AppTest" name="pruebaSumarNegativo" time="0.001"/>
 </testsuite>
