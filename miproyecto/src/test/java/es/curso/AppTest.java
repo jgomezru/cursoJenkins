@@ -74,7 +74,7 @@ public class AppTest
     public void pruebaSumar()
     {
         int resultado=App.sumar(1,2);
-        System.out.println('Dentro de pruebaSumar' +resultado )
+        System.out.println('Dentro de pruebaSumar' +resultado );
         assertEquals(resultado,2);
     }              
         
