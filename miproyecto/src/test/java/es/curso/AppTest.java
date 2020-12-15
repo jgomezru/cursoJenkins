@@ -63,8 +63,19 @@ public class AppTest
         int resultado=App.mayor(0,-5);
         assertEquals(resultado,0);
     }          
+
+@Test
+    public void pruebaSumarNegativo()
+    {
+        int resultado=App.sumar(0,-5);
+        assertEquals(resultado,-5);
+    }      
         
-        
+    public void pruebaSumar()
+    {
+        int resultado=App.sumar(1,2);
+        assertEquals(resultado,2);
+    }              
         
     
 }
