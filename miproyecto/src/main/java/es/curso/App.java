@@ -17,8 +17,7 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "Hola Mundo!" );
-        /*logger.log("My Message");*/
-         LOGGER.log(Level.INFO, "Hola Mundo pero en el log");
+        LOGGER.log(Level.INFO, "Hola Mundo pero en el log");
     }
     
     public static int doblar (int numero)

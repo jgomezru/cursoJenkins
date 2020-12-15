@@ -1,0 +1,30 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36mes.curso:miproyecto[0;1m >-------------------------[m
+[[1;34mINFO[m] [1mBuilding miproyecto 1.0-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32msonar-maven-plugin:3.7.0.1746:sonar[m [1m(default-cli)[m @ [36mmiproyecto[0;1m ---[m
+[[1;34mINFO[m] User cache: /home/ubuntu/.sonar/cache
+[[1;34mINFO[m] SonarQube version: 8.6.0
+[[1;34mINFO[m] Default locale: "en", source code encoding: "UTF-8"
+[[1;33mWARNING[m] SonarScanner will require Java 11 to run starting in SonarQube 8.x
+[[1;34mINFO[m] Load global settings
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mSkipping miproyecto[m
+[[1;34mINFO[m] This project has been banned from the build due to previous failures.
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  1.738 s
+[[1;34mINFO[m] Finished at: 2020-12-15T17:22:44Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar[m [1m(default-cli)[m on project [36mmiproyecto[m: [1;31mNot authorized. Analyzing this project requires to be authenticated. Please provide the values of the properties sonar.login and sonar.password.[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
