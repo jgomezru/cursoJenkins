@@ -1,0 +1,6 @@
+
+  
+  mvn sonar:sonar\
+  -Dsonar.projectKey=miproyecto\
+  -Dsonar.host.url=http://172.31.14.106:8081\
+  -Dsonar.login=671b2b820e3b095c534500e8b9e26408a49c49ea
