@@ -56,12 +56,4 @@ git add . 1>>$AddLog 2>>$AddLog
 git commit -m "$message" 1>>$CommitLog 2>>$CommitLog; git push 1>>$PushLog 2>>$PushLog
 
 
-
-echo "antes de enviar a SonarQube"
-mvn sonar:sonar\
-  -Dsonar.projectKey=miproyecto\
-  -Dsonar.host.url=http://172.31.14.106:8081\
-  -Dsonar.login=671b2b820e3b095c534500e8b9e26408a49c49ea
-echo "terminado SonarQube"
-
 echo "Finalizado"
