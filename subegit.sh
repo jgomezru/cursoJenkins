@@ -17,7 +17,7 @@ PushLog="/dev/null"
 # Mensaje
 message=$@
 if [ -z "$message" ]; then
-  message="Subiendo archivos de forma automatica dia 15"
+  message="Subiendo archivos de forma automatica dia 16"
 fi
 
 # Haciendo los git add/commit/push por steps
