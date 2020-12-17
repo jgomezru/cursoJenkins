@@ -1,43 +1,31 @@
-pipeline{ // este fichero lo guardaria dentro de la carpeta raiz del proyecto
-    agent any
-    stages{
+ stages{
         stage('Repositorio'){
-            steps {echo 'Clonamos repositorio'
-                //aqui iria la url del repositorio
-            } //stage repositorio
-            
+            steps{
+                echo 'Clono el repo'
+                buildName '@BUILD_${BUILD_TIMESTAMP}_${BUILD_NUMBER}'
+                git branch: 'main', url: https://github.com/jgomezru/cursoJenkins.git'
+            }
         }
         stage('Empaquetado'){
-            steps {echo 'Empaquetado con maven'
-                sh 'exit 0' // mvn package aqui haria el package
+            steps{
+                echo 'Lo hago con maven'
+                sh 'cd miproyecto;mvn package'
             }
-            
-        } //stage empaquetado
-        stage('Despliegue'){
-            steps {echo 'Aqui iria el despliegue,colgarlo en Tomcat'}
-            
-        }//fin despliegue
-    }//fin stages
-    post {
-        always{
-            echo 'Post se ejecuta siempre'
-            
         }
-        success{
-            echo 'Post cuando ha ido bien' 
-            sh 'exit 1'
-            
-        }
-        failure{
-            echo 'Post si ha ido mal'  
-            sh 'exit 0'
-            
-        }
-        changed{
-            echo 'Post si el estado es distinto al de la anterior ejecucion'
-            
+        stage('Sonarqube'){
+            steps{
+                echo 'Llamo a sonar con maven'
+                sh '''
+                cd miproyecto
+                
+                mvn sonar:sonar -Dsonar.projectKey=miproyecto\\
+                  -Dsonar.host.url=http://172.31.14.106:8081 \\
+                  -Dsonar.login=d2cf553c30364b72ad69336304082305
+                '''
+            }
         }
     }
-    
-}
-    
+post{
+        always{
+            echo 'Yo me ejecuto siempre'
+        }
