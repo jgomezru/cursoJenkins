@@ -1,3 +1,4 @@
+   sudo su-
    mvn sonar:sonar\
   -Dsonar.projectKey=miproyecto\
   -Dsonar.host.url=http://172.31.14.106:8081\
